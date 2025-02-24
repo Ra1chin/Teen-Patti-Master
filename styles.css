@@ -1,0 +1,248 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.8;
+    padding-top: 80px; /* Adjust for fixed header */
+    background-image: url('Teen-patti-bg.jpg'); /* Path to your image */
+    background-size: cover;
+    background-attachment: fixed; /* Keeps the background fixed */
+    background-position: center;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7); /* Dark overlay for readability */
+    z-index: -1;
+}
+
+/* Header Styles */
+header {
+    background-color: #FF6600;
+    color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 20px 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    max-height: 50px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    color: #333;
+}
+
+/* Mobile Menu */
+.menu-toggle {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: #333;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.mobile-menu ul {
+    list-style: none;
+}
+
+.mobile-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    display: block;
+    padding: 20px;
+    font-weight: bold;
+}
+
+.mobile-menu a:hover {
+    color: #FF6000;
+}
+
+/* Blog Content */
+.blog-content {
+    max-width: 1500px;
+    margin: 40px auto;
+    padding: 20px;
+    color: #e0e4ec;
+}
+
+.blog-content p {
+    max-width: 100%;
+    font-size: 1.7rem;
+    text-align: left;
+    margin-bottom: 20px;
+}
+.blog-content h2 {
+    font-size: 2rem;
+}
+
+.blog-content h1 {
+    color: #FF6000;
+}
+
+.blog-content h2 {
+    color: #DAD104;
+}
+.blog-content strong {
+    color: #129412;
+}
+.blog-content a:hover{
+    color: #DAD104;
+}
+
+/* Adjust blog content for larger screens */
+@media (min-width: 1200px) {
+    .blog-content {
+        padding: 20px 50px;
+    }
+}
+
+/* Headings */
+h1 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+h2 {
+    text-align: left;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+p {
+    text-align: left;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    max-width: 1000px;
+}
+
+/* Footer Banner */
+footer {
+    background-color: #000A1F;
+    color: #DAD104;
+    overflow: hidden;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+.footer-banner {
+    display: flex;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.scrolling-text {
+    display: flex;
+    animation: scroll 15s linear infinite;
+}
+
+.scrolling-text p {
+    font-size: 1.2rem;
+    padding: 0 50px;
+}
+
+/* Scrolling animation */
+@keyframes scroll {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .scrolling-text p {
+        font-size: 1rem;
+    }
+
+    .blog-content p {
+        font-size: 1rem; /* Smaller font size for mobile */
+    }
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .mobile-menu.active {
+        display: flex;
+        flex-direction: column;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+        text-align: left;
+    }
+
+    h2, p {
+        text-align: left;
+        padding: 0 20px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+}
